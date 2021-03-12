@@ -1,0 +1,48 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;
+    padding: 2px 16px;
+    height: 650px;
+    align-items: center;
+    background-color: #222222;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card-text { 
+    height: 150px; 
+    overflow-y: scroll; 
+    width: 80%; 
+    border-style: solid;
+    border-color: #545452;
+    border-radius: 5px;
+    position: absolute;
+    left: 40px;
+    right: 4rem;
+    bottom: 60px;
+    padding: 5px;
+}
+.cbtext{
+    color:white;
+}
+.cbimage{
+    object-fit: cover;
+    width: 40%;
+    padding-top: 10px;
+}
+.genres{
+    display: inline;
+}
+.flex-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: stretch;
+}
+.flex-container > div {
+    flex-basis: 22rem;
+    flex-shrink: 0;
+}

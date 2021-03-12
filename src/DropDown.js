@@ -49,6 +49,7 @@ function DropDown(prop) {
             margin: "auto",
             marginBottom:"20px",
             borderStyle: "solid",
+            padding: "5px",
         }}>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -57,7 +58,7 @@ function DropDown(prop) {
                     {
                     dates.map((date)=>{
                         return(
-                            <option value={date}>{date}</option>
+                            <option value={date} key={date}>{date}</option>
                         );
                     })
                     }
