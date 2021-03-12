@@ -1,3 +1,22 @@
+.CardsTest{
+  border-style: solid; 
+  padding: 5px;
+  margin: auto;
+  margin-bottom: 20px;
+
+  width: calc(90vw - 100px);
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+.CardImgTest{
+  height: 150px;
+}
+.cardTextTest{
+  margin: 0;
+  color: white;
+}
+
 .App {
   text-align: center;
 }

@@ -1,4 +1,4 @@
-import React, {useState,useEffect}from 'react'
+import React, {useState,useEffect} from 'react'
 
 function Cards(props){
     const [data,setData] = useState(null);
@@ -25,6 +25,7 @@ function Cards(props){
           style={{
               backgroundColor: "#222222",
           }}>
+            <h1 style={{color:"white"}}>Showing Shows in {props.year} during {props.season} season</h1>
             {animeList.map((anime)=>{
               return(
                 <div className = "CardsTest" key={anime.mal_id}

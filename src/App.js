@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Body from './Body.js';
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       Footer
 
       */}
+
       hello
+      <Body></Body>
     </div>
   );
 }
