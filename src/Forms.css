@@ -1,0 +1,13 @@
+.logininfo{
+    text-align: center;
+    width: 50%; 
+    margin: auto;
+    margin-top:20px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color: #545452;
+    border-radius: 5px;
+    background-color: #222222;
+    padding: 5px;
+    color: white;
+}

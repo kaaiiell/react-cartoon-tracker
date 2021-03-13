@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import Cards from './Cards.js';
+import './DropDown.css';
+import './ThisWeek.css';
 
-function DropDown(prop) {
+function DropDown(props) {
     const[value,setValue] = useState(2021);
     const[season,setSeason] = useState("winter");
     const[org,setOrg] = useState("title");
@@ -36,22 +38,95 @@ function DropDown(prop) {
         setisDone(false);
         //z = event.target.value;
     };
+    const returnDay = (d) =>{
+        if(d==='0'){
+            return "Sunday";
+        }
+        if(d==='1'){
+            return "Monday";
+        }
+        if(d==='2'){
+            return "Tuesday";
+        }
+        if(d==='3'){
+            return "Wednesday";
+        }
+        if(d==='4'){
+            return "Thursday";
+        }
+        if(d==='5'){
+            return "Friday";
+        }
+        if(d==='6'){
+            return "Saturday";
+        }
+        else{
+            return "This Season";
+        }
+
+    };
+
+    function getDayNum(){
+        let today = new Date();
+        let daynum = today.getDay();
+        let strindayNum = `${daynum}`;
+        return strindayNum;
+    }
+    const [dayNum,setDayNum] = useState('10');
+    const handleClick = (event) =>{
+        if(event.target.id==='7'){
+            //console.log(event.target.id);
+            setDayNum(getDayNum());
+        }
+        else{
+            setDayNum(event.target.id);
+        }
+        //console.log(event.target.innerHTML);
+    }
+
+
     const dates = [];
     for(let i = 2021;i>(2021-11);i--){
         dates.push(i);
     }
-
     return (
         <>
-        <div style={{
-            textAlign:"center",
-            width: "50%",
-            margin: "auto",
-            marginBottom:"20px",
-            borderStyle: "solid",
-            padding: "5px",
-        }}>
-            <form onSubmit={handleSubmit}>
+        {/* <ThisWeek></ThisWeek> */}
+        <div className = "dropDown">
+
+        <div className="dayWrap">
+            <h1 className="airingHeader" style={{color:"white"}} id = "thedate">Shows Airing {returnDay(dayNum)}</h1>
+            <div className="buttonWrap" id="AllB">
+                <button className ="btn btn-secondary btn-sm" id={10} onClick={handleClick}>All</button>
+            </div>
+            <div className="buttonWrap" id="TodayB">
+                <button className ="btn btn-secondary btn-sm" id={7} onClick={handleClick}>Today</button>
+            </div>
+            <div className="buttonWrap" id="SundayB">
+                <button className ="btn btn-secondary btn-sm" id ={0} onClick={handleClick}>Sunday</button>
+            </div>
+            <div className="buttonWrap" id="MondayB">
+            <button className ="btn btn-secondary btn-sm" id ={1} onClick={handleClick}>Monday</button>
+            </div>
+            <div className="buttonWrap" id="TuesdayB">
+                <button className ="btn btn-secondary btn-sm" id ={2} onClick={handleClick}>Tuesday</button>
+            </div>
+            <div className="buttonWrap" id="WednesdayB">
+                <button className ="btn btn-secondary btn-sm" id ={3} onClick={handleClick}>Wendesday</button>
+            </div>
+            <div className="buttonWrap" id="ThursdayB">
+                <button className ="btn btn-secondary btn-sm" id ={4} onClick={handleClick}>Thursday</button>
+            </div>
+            <div className="buttonWrap" id="FridayB">
+                <button className ="btn btn-secondary btn-sm" id ={5} onClick={handleClick}>Friday</button>
+            </div>
+            <div className="buttonWrap" id="SaturdayB">
+                <button className ="btn btn-secondary btn-sm" id ={6} onClick={handleClick}>Saturday</button>
+            </div>
+        </div>
+
+
+            <form className="formdropdown "onSubmit={handleSubmit}>
                 <label>
                 Filter:
                 <select value={value} onChange={handleChange}>
@@ -79,8 +154,23 @@ function DropDown(prop) {
                 <input type="submit" value="Submit" />
             </form>
         </div>
-        {isDone?<Cards year={value} season={season} org={org} isDone ={isDone}/>:
-        <Cards year={pvalue} season={pseason} org={porg} isDone ={isDone}/>}
+            {
+            isDone?<Cards 
+                year={value} 
+                season={season} 
+                org={org} 
+                isDone ={isDone} 
+                getDay={dayNum}/>:
+
+            <Cards 
+                year={pvalue} 
+                season={pseason} 
+                org={porg} 
+                isDone ={isDone} 
+                getDay={dayNum}/>
+            }
+        {/* {isDone?<ThisWeek year={value} season={season} org={org} isDone ={isDone}/>:
+        <ThisWeek year={pvalue} season={pseason} org={porg} isDone ={isDone}/>} */}
         </>
     );
 }

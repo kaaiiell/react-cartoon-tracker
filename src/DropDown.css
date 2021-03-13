@@ -1,0 +1,16 @@
+.dropDown{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    /* border-color: #A5A4A4; */
+    border-color: #545452;
+    padding: 5px;
+    background-color:  #222222;
+    color: white;
+}
+/* .formdropdown{
+    margin-top: ;
+} */

@@ -20,7 +20,6 @@ function Countdown(props){
     return i;
   }
   const calcTimeLeft = ()=>{
-    let year = new Date().getFullYear();
     let iso = new Date(props.startDate)
     let today = new Date();
     while((iso-today)<=0){
@@ -48,7 +47,7 @@ function Countdown(props){
         },1000);
       });
 
-
+    const lol = true;
     return(
         <>
         {(props.episodes&&!isabove)?
