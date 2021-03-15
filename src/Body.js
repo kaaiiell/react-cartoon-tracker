@@ -11,6 +11,12 @@ function Body(props){
     const context = useContext(AuthContext);
     const {loading,data} = useQuery(FETCH_POSTS_QUERY);
     //const {loading,data: {getPosts: posts } = {} } = useQuery(FETCH_POSTS_QUERY);
+
+    const getYear = ()=>{
+        let temp = new Date();
+        let y = temp.getFullYear();
+        return y;
+    }
     
     if(data){
         console.log(data);
@@ -53,7 +59,7 @@ function Body(props){
 
             </h1>
             } */}
-            <DropDown day={true}></DropDown>
+            <DropDown year={getYear()}day={true}></DropDown>
             {/* <Forms></Forms> */}
             {/* <ThisWeek></ThisWeek> */}
         </div>

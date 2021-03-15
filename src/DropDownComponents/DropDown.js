@@ -4,13 +4,13 @@ import './DropDown.css';
 import './ThisWeek.css';
 
 function DropDown(props) {
-    const[value,setValue] = useState(2021);
+    const[value,setValue] = useState(props.year);
     const[season,setSeason] = useState("winter");
     const[org,setOrg] = useState("title");
     const[isDone,setisDone] = useState(false);
     const[pvalue,psetValue] = useState(2021);
     const[pseason,psetSeason] = useState("winter");
-    const[porg,psetOrg] = useState("title");
+    const[porg,psetOrg] = useState("popularity");
 
     const handleSubmit = (event) =>{
         setisDone(true);
