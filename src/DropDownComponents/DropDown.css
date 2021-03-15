@@ -9,7 +9,10 @@
     border-color: #545452;
     padding: 5px;
     background-color:  #222222;
-    color: white;
+}
+.dayWrap{
+    border-style: solid;
+    border-color:#222222;
 }
 /* .formdropdown{
     margin-top: ;

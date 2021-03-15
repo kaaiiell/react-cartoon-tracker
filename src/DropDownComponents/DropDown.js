@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Cards from './Cards.js';
+import Cards from '../cardComponents/Cards.js';
 import './DropDown.css';
 import './ThisWeek.css';
 
@@ -127,9 +127,11 @@ function DropDown(props) {
 
 
             <form className="formdropdown "onSubmit={handleSubmit}>
-                <label>
+                <label style={{color:"white"}}>
                 Filter:
-                <select value={value} onChange={handleChange}>
+                <select value={value} onChange={handleChange} style={{
+                    borderRadius:"5px",marginRgiht:"5px",marginLeft:"5px",backgroundColor:"#545452",color:"white",
+                    }}>
                     {
                     dates.map((date)=>{
                         return(
@@ -138,20 +140,26 @@ function DropDown(props) {
                     })
                     }
                 </select>
-                <select value={season} onChange={handleChangeSeason}>
+                <select value={season} onChange={handleChangeSeason} style={{
+                    borderRadius:"5px",marginRgiht:"5px",marginLeft:"5px",backgroundColor:"#545452",color:"white",
+                    }}>
                     <option value="summer">summer</option>
                     <option value="winter">winter</option>
                     <option value="fall">fall</option>
                     <option value="spring">spring</option>
                 </select>
-                <select value={org} onChange={handleChangeOrg}>
+                <select value={org} onChange={handleChangeOrg} style={{
+                    borderRadius:"5px",marginRgiht:"5px",marginLeft:"5px",backgroundColor:"#545452",color:"white",
+                    }}>
                     <option value="popularity">popularity</option>
                     <option value="rating">rating</option>
                     <option value="members">members</option>
                     <option value="title">title</option>
                 </select>
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" style={{
+                    borderRadius:"5px",marginRgiht:"5px",marginLeft:"5px",backgroundColor:"#545452",color:"white",
+                    }}/>
             </form>
         </div>
             {

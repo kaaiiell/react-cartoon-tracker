@@ -1,18 +1,29 @@
 import './App.css';
-import Body from './Body.js';
-import Header from './Header.js';
+import {Routes,Route} from 'react-router-dom';
+// import {BrowserRouter as Router} from 'react-router-dom';
+import {
+  Home,
+  Log,
+  Contact,
+  Register
+} from './pages.js';
 
-function App() {
+import {AuthProvider} from './context/auth';
+import AuthRoute from './util/AuthRoute';
+ 
+function App(props) {
   return (
     <div className="App" style={{backgroundColor:"#545452"}}>
-      {/*
-      Header
-      Body
-      Footer
-
-      */}
-      <Header></Header>
-      <Body></Body>
+        <AuthProvider>
+        <Routes>
+        <Route exact path="/" element={<Home auth={props.auth}/>}/>
+        <AuthRoute exact path="/login" element={<Log/>}/>
+        <AuthRoute exact path="/register" element={<Register/>}/>
+        <Route exact path="/login" element={<Contact/>}/>
+        </Routes>
+        </AuthProvider>
+      {/* <Header></Header>
+      <Body></Body> */}
     </div>
   );
 }

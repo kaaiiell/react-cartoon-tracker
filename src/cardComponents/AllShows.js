@@ -1,8 +1,35 @@
 import React from 'react';
 import './Cards.css';
-import Countdown from './Countdown.js';
+import Countdown from '../Countdown.js';
+import AddtoWatch from '../AddtoWatch';
 
-function Wednesday(props){
+function AllShows(props){
+    if(props.list===true){
+        console.log("props.list:", props.list);
+        return(
+            <h1>WatchList component</h1>
+        );
+    }
+
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const getMonth = (iso)=>{
+        let date = new Date(iso);
+        let month = monthNames[date.getMonth()];
+        let dayName = dayNames[date.getDay()];
+        let day = date.getDate();
+        let year = date.getFullYear();
+        const info = [];
+        info.push(month);
+        info.push(day);
+        info.push(year);
+        info.push(dayName);
+        return info;
+    }
+    
+
     let animeList = props.data;
 
     return(
@@ -19,7 +46,7 @@ function Wednesday(props){
                 {/* <small className = "cbtext" id={anime.title}>Live Countdown Component</small> */}
                 <Countdown startDate = {anime.airing_start} continuing = {anime.continuing} episodes={anime.episodes}></Countdown>
                 <br></br>
-                <small className = "cbtext">Starts: {anime.airing_start}</small>
+                <small className = "cbtext">Starts: {getMonth(anime.airing_start)[3]} {getMonth(anime.airing_start)[0]}, {getMonth(anime.airing_start)[1]}, {getMonth(anime.airing_start)[2]}</small>
                 <br></br>
                 <small className = "cbtext">Score: {anime.score}</small>
                 <br></br>
@@ -40,13 +67,19 @@ function Wednesday(props){
                     left: "10px",
                     bottom: "10px",
                     }} >More Info</a>
-                <a href="#home" className="btn btn-primary"
+                {/* <a href="#home" className="btn btn-primary"
                 style={{
                     display:"inline",
                     position: "absolute",
                     right: "10px",
                     bottom: "10px",
-                    }}>MAL</a>
+                    }}>MAL</a> */}
+                <AddtoWatch id={anime.mal_id} style={{
+                    display:"inline",
+                    position: "absolute",
+                    right: "10px",
+                    bottom: "10px",
+                    }}></AddtoWatch>
             </div>
         </div> 
         ); 
@@ -54,4 +87,4 @@ function Wednesday(props){
     </div>
     );
 }
-export default Wednesday;
+export default AllShows;

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Cards.css';
-import Countdown from './Countdown.js';
+import Countdown from '../Countdown.js';
 
-function Monday(props){
+function Friday(props){
     let animeList = props.data;
 
     return(
@@ -54,4 +54,4 @@ function Monday(props){
     </div>
     );
 }
-export default Monday;
+export default Friday;

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cards.css';
-import Countdown from './Countdown.js';
+import Countdown from '../Countdown.js';
 
 function Tuesday(props){
     let animeList = props.data;

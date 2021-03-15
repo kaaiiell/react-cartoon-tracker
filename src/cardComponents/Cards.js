@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react'
 import './Cards.css';
-import Countdown from './Countdown.js';
 import Saturday from './Saturday.js';
 import Friday from './Friday.js';
 import Thursday from './Thursday.js';
@@ -21,7 +20,8 @@ function Cards(props){
         .then(setData);
     },[url]);
 
-    console.log(data);
+    //console.log(data);
+    const listData = {};
 
     function getDayNum(iso){
       let today = new Date(iso);
@@ -36,6 +36,18 @@ function Cards(props){
                 sunday.push(anime);
             }
             });
+        if(props.org==="title"){
+            sunday.sort((a, b) => (a.title > b.title) ? 1 : -1);
+        }
+        else if(props.org==="popularity"){
+            sunday.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+        }
+        else if(props.org==="members"){
+            sunday.sort((a, b) => (a.members > b.members) ? -1 : 1);
+        }
+        else if(props.org==="rating"){
+            sunday.sort((a, b) => (a.score > b.score) ? -1 : 1);
+        }
         return(
             <Sunday data ={sunday}/>
         )
@@ -48,6 +60,18 @@ function Cards(props){
                 sunday.push(anime);
             }
             });
+        if(props.org==="title"){
+            sunday.sort((a, b) => (a.title > b.title) ? 1 : -1);
+        }
+        else if(props.org==="popularity"){
+            sunday.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+        }
+        else if(props.org==="members"){
+            sunday.sort((a, b) => (a.members > b.members) ? -1 : 1);
+        }
+        else if(props.org==="rating"){
+            sunday.sort((a, b) => (a.score > b.score) ? -1 : 1);
+        }
         return(
             <Monday data ={sunday}/>
         )
@@ -60,6 +84,18 @@ function Cards(props){
                 sunday.push(anime);
             }
             });
+        if(props.org==="title"){
+            sunday.sort((a, b) => (a.title > b.title) ? 1 : -1);
+        }
+        else if(props.org==="popularity"){
+            sunday.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+        }
+        else if(props.org==="members"){
+            sunday.sort((a, b) => (a.members > b.members) ? -1 : 1);
+        }
+        else if(props.org==="rating"){
+            sunday.sort((a, b) => (a.score > b.score) ? -1 : 1);
+        }
         return(
             <Tuesday data ={sunday}/>
         )
@@ -72,6 +108,18 @@ function Cards(props){
                 sunday.push(anime);
             }
             });
+        if(props.org==="title"){
+            sunday.sort((a, b) => (a.title > b.title) ? 1 : -1);
+        }
+        else if(props.org==="popularity"){
+            sunday.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+        }
+        else if(props.org==="members"){
+            sunday.sort((a, b) => (a.members > b.members) ? -1 : 1);
+        }
+        else if(props.org==="rating"){
+            sunday.sort((a, b) => (a.score > b.score) ? -1 : 1);
+        }
         return(
             <Wednesday data ={sunday}/>
         )
@@ -84,6 +132,18 @@ function Cards(props){
                 sunday.push(anime);
             }
             });
+        if(props.org==="title"){
+            sunday.sort((a, b) => (a.title > b.title) ? 1 : -1);
+        }
+        else if(props.org==="popularity"){
+            sunday.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+        }
+        else if(props.org==="members"){
+            sunday.sort((a, b) => (a.members > b.members) ? -1 : 1);
+        }
+        else if(props.org==="rating"){
+            sunday.sort((a, b) => (a.score > b.score) ? -1 : 1);
+        }
         return(
             <Thursday data ={sunday}/>
         )
@@ -96,6 +156,18 @@ function Cards(props){
                 sunday.push(anime);
             }
             });
+        if(props.org==="title"){
+            sunday.sort((a, b) => (a.title > b.title) ? 1 : -1);
+        }
+        else if(props.org==="popularity"){
+            sunday.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+        }
+        else if(props.org==="members"){
+            sunday.sort((a, b) => (a.members > b.members) ? -1 : 1);
+        }
+        else if(props.org==="rating"){
+            sunday.sort((a, b) => (a.score > b.score) ? -1 : 1);
+        }
         return(
             <Friday data ={sunday}/>
         )
@@ -108,6 +180,18 @@ function Cards(props){
                 sunday.push(anime);
             }
             });
+        if(props.org==="title"){
+            sunday.sort((a, b) => (a.title > b.title) ? 1 : -1);
+        }
+        else if(props.org==="popularity"){
+            sunday.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+        }
+        else if(props.org==="members"){
+            sunday.sort((a, b) => (a.members > b.members) ? -1 : 1);
+        }
+        else if(props.org==="rating"){
+            sunday.sort((a, b) => (a.score > b.score) ? -1 : 1);
+        }
         return(
             <Saturday data ={sunday}/>
         )
@@ -120,10 +204,22 @@ function Cards(props){
                 sunday.push(anime);
             }
             });
+        if(props.org==="title"){
+            sunday.sort((a, b) => (a.title > b.title) ? 1 : -1);
+        }
+        else if(props.org==="popularity"){
+            sunday.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+        }
+        else if(props.org==="members"){
+            sunday.sort((a, b) => (a.members > b.members) ? -1 : 1);
+        }
+        else if(props.org==="rating"){
+            sunday.sort((a, b) => (a.score > b.score) ? -1 : 1);
+        }
         return(
             <>
             <Spinner animation="border" variant="light" />
-            <AllShows data ={sunday}/>
+            <AllShows data ={sunday}  list={false} listData={listData}/>
             </>
         )
     }
