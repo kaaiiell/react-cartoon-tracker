@@ -8,7 +8,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {setContext} from 'apollo-link-context';
 
 const httpLink = createHttpLink({
-    uri: "http://localhost:5000",
+    uri: "https://immense-basin-96787.herokuapp.com/",
 });
 
 const authLink = setContext(()=>{
