@@ -1,4 +1,8 @@
-Website deployed on Heroku: https://polar-inlet-86588.herokuapp.com/
+# Website deployed on Heroku: 
+https://polar-inlet-86588.herokuapp.com/
+Website takes long to load if it hasnt been requested in a while because
+heroku unloads my app after a while as a free user. If the request gives an application error
+then just refresh the url, it will load. 
 
 # Getting Started with Create React App
 
