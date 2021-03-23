@@ -6,9 +6,9 @@ import './ThisWeek.css';
 function DropDown(props) {
     const[value,setValue] = useState(props.year);
     const[season,setSeason] = useState("winter");
-    const[org,setOrg] = useState("title");
+    const[org,setOrg] = useState("popularity");
     const[isDone,setisDone] = useState(false);
-    const[pvalue,psetValue] = useState(2021);
+    const[pvalue,psetValue] = useState(props.year);
     const[pseason,psetSeason] = useState("winter");
     const[porg,psetOrg] = useState("popularity");
 
